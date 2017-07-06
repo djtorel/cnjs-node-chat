@@ -13,7 +13,7 @@ function scrollToBottom() {
   const lastMessageHeight = newMessage.prev().innerHeight()
 
   if (clientHeight + scrollTop + newMessageHeight + lastMessageHeight >= scrollHeight) {
-   messages.scrollTop(scrollHeight)
+    messages.scrollTop(scrollHeight)
   }
 }
 
@@ -75,7 +75,6 @@ jQuery('#message-form').on('submit', function (e) {
   const messageTextBox = jQuery('[name=message]')
 
   socket.emit('createMessage', {
-    from: 'User',
     text: messageTextBox.val(),
   }, function () {
     messageTextBox.val('')
